@@ -1,3 +1,4 @@
+import os
 import re
 import argparse
 import json
@@ -1729,6 +1730,7 @@ class AlasGUI(Frame):
     def run(self) -> None:
         # setup gui
         set_env(title="Alas", output_animation=False)
+        run_js('document.head.append(Object.assign(document.createElement(\'link\'), { rel: \'manifest\', href: \'/static/assets/spa/manifest.json\' }))')
         add_css(filepath_css("alas"))
         if self.is_mobile:
             add_css(filepath_css("alas-mobile"))
@@ -2058,6 +2060,8 @@ def app():
     from deploy.atomic import atomic_failure_cleanup
     atomic_failure_cleanup('./config')
 
+    static_path = os.getcwd()
+
     def index():
         if key is not None and not login(key):
             logger.warning(f"{info.user_ip} login failed.")
@@ -2079,7 +2083,7 @@ def app():
     app = asgi_app(
         applications=[index, manage],
         cdn=cdn,
-        static_dir=None,
+        static_dir=static_path,
         debug=True,
         on_startup=[
             startup,
