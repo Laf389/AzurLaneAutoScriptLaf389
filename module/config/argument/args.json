@@ -9340,6 +9340,10 @@
           44,
           22
         ]
+      },
+      "ExecuteFixedPatrolScan": {
+        "type": "checkbox",
+        "value": false
       }
     },
     "OpsiFleet": {
