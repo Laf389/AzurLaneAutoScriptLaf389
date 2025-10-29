@@ -953,12 +953,155 @@ class AlasGUI(Frame):
 
         if img_base64 is not None and img_base64 != self.last_displayed_screenshot_base64:
             self.last_displayed_screenshot_base64 = img_base64
-            run_js(f'''
+            js = '''
+            (function(){
+                var src = "data:image/jpg;base64,<<IMG>>";
                 var img = document.getElementById("screenshot-img");
-                if (img) {{
-                    img.src = "data:image/png;base64,{img_base64}";
-                }}
-            ''')
+                if (!img) {
+                    return;
+                }
+                img.style.maxWidth = "100%";
+                img.style.maxHeight = "240px";
+                img.style.height = "auto";
+                img.style.cursor = "zoom-in";
+                img.style.transform = "";
+
+                var modal = document.getElementById("screenshot-modal");
+                if (!modal) {
+                    modal = document.createElement("div");
+                    modal.id = "screenshot-modal";
+                    Object.assign(modal.style, {
+                        position: "fixed",
+                        left: 0,
+                        top: 0,
+                        width: "100vw",
+                        height: "100vh",
+                        display: "none",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        background: "rgba(0,0,0,0.65)",
+                        zIndex: 99999,
+                        overflow: "hidden",
+                        padding: "20px",
+                        boxSizing: "border-box",
+                        cursor: "grab"
+                    });
+                    var modalImg = document.createElement("img");
+                    modalImg.id = "screenshot-modal-img";
+                    Object.assign(modalImg.style, {
+                        maxWidth: "90vw",
+                        maxHeight: "90vh",
+                        objectFit: "contain",
+                        boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+                        transition: "transform 0.05s linear",
+                        transformOrigin: "center center",
+                        willChange: "transform"
+                    });
+                    modal.appendChild(modalImg);
+
+                    modal.dataset.scale = 1;
+                    modal.dataset.tx = 0;
+                    modal.dataset.ty = 0;
+                    modal.dataset.panning = 0;
+
+                    function applyTransform() {
+                        var s = parseFloat(modal.dataset.scale) || 1;
+                        var tx = parseFloat(modal.dataset.tx) || 0;
+                        var ty = parseFloat(modal.dataset.ty) || 0;
+                        modalImg.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + s + ')';
+                    }
+
+                    modal.addEventListener('wheel', function(e) {
+                        if (e.ctrlKey) return;
+                        e.preventDefault();
+                        var rect = modalImg.getBoundingClientRect();
+                        var cx = e.clientX - (rect.left + rect.width/2);
+                        var cy = e.clientY - (rect.top + rect.height/2);
+                        var scale = parseFloat(modal.dataset.scale) || 1;
+                        var delta = -e.deltaY;
+                        var factor = delta > 0 ? 1.12 : 0.88;
+                        var newScale = Math.min(6, Math.max(0.3, scale * factor));
+
+                        var tx = parseFloat(modal.dataset.tx) || 0;
+                        var ty = parseFloat(modal.dataset.ty) || 0;
+                        modal.dataset.tx = tx - cx * (newScale - scale);
+                        modal.dataset.ty = ty - cy * (newScale - scale);
+                        modal.dataset.scale = newScale;
+                        applyTransform();
+                    }, { passive: false });
+
+                    var start = { x:0, y:0 };
+                    modalImg.addEventListener('mousedown', function(e) {
+                        e.preventDefault();
+                        modal.dataset.panning = 1;
+                        start.x = e.clientX;
+                        start.y = e.clientY;
+                        modal.style.cursor = 'grabbing';
+                    });
+                    window.addEventListener('mousemove', function(e) {
+                        if (modal.dataset.panning !== '1') return;
+                        var dx = e.clientX - start.x;
+                        var dy = e.clientY - start.y;
+                        start.x = e.clientX;
+                        start.y = e.clientY;
+                        modal.dataset.tx = (parseFloat(modal.dataset.tx) || 0) + dx;
+                        modal.dataset.ty = (parseFloat(modal.dataset.ty) || 0) + dy;
+                        applyTransform();
+                    });
+                    window.addEventListener('mouseup', function(e) {
+                        if (modal.dataset.panning === '1') {
+                            modal.dataset.panning = 0;
+                            modal.style.cursor = 'grab';
+                        }
+                    });
+
+                    modalImg.addEventListener('dblclick', function(e) {
+                        modal.dataset.scale = 1;
+                        modal.dataset.tx = 0;
+                        modal.dataset.ty = 0;
+                        applyTransform();
+                    });
+
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === modal) modal.style.display = "none";
+                    });
+
+                    document.body.appendChild(modal);
+                    document.addEventListener("keydown", function(e) {
+                        if (e.key === "Escape") modal.style.display = "none";
+                    });
+                }
+
+                img.src = src;
+                var modalImgEl = document.getElementById("screenshot-modal-img");
+                if (modalImgEl) modalImgEl.src = src;
+
+                img.onclick = function(e) {
+                    var m = document.getElementById("screenshot-modal");
+                    var mi = document.getElementById("screenshot-modal-img");
+                    if (m && mi) {
+                        m.dataset.scale = 1;
+                        m.dataset.tx = 0;
+                        m.dataset.ty = 0;
+                        mi.style.transform = '';
+                        m.style.display = "flex";
+                        applyTransform();
+                    }
+                };
+
+                function applyTransform() {
+                    var m = document.getElementById("screenshot-modal");
+                    if (!m) return;
+                    var mi = document.getElementById("screenshot-modal-img");
+                    var s = parseFloat(m.dataset.scale) || 1;
+                    var tx = parseFloat(m.dataset.tx) || 0;
+                    var ty = parseFloat(m.dataset.ty) || 0;
+                    if (mi) mi.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + s + ')';
+                }
+            })();
+            '''
+            js = js.replace('<<IMG>>', img_base64)
+            run_js(js)
         elif img_base64 is None:
             run_js('''
                 var img = document.getElementById("screenshot-img");
