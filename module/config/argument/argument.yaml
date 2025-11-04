@@ -761,6 +761,7 @@ OpsiHazard1Leveling:
   TargetZone:
     value: 0
     option: [ 0, 44, 22 ]
+  SirenResearch_Enable: false
   ExecuteFixedPatrolScan: false
 OpsiCheckLeveling:
   TargetLevel: 0

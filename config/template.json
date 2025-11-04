@@ -1930,6 +1930,7 @@
     },
     "OpsiHazard1Leveling": {
       "TargetZone": 0,
+      "SirenResearch_Enable": false,
       "ExecuteFixedPatrolScan": false
     },
     "OpsiFleet": {

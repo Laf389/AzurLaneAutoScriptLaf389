@@ -9341,6 +9341,10 @@
           22
         ]
       },
+      "SirenResearch_Enable": {
+        "type": "checkbox",
+        "value": false
+      },
       "ExecuteFixedPatrolScan": {
         "type": "checkbox",
         "value": false
