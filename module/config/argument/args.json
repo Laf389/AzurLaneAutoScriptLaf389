@@ -9351,6 +9351,10 @@
           22
         ]
       },
+      "YellowCoinPreserve": {
+        "type": "input",
+        "value": 100000
+      },      
       "SirenResearch_Enable": {
         "type": "checkbox",
         "value": false
