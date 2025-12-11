@@ -1935,7 +1935,8 @@
     "OpsiHazard1Leveling": {
       "TargetZone": 0,
       "SirenResearch_Enable": false,
-      "ExecuteFixedPatrolScan": false
+      "ExecuteFixedPatrolScan": false,
+      "Cl1Filter": "ActionPoint > PurpleCoins"
     },
     "OpsiFleet": {
       "Fleet": 1,

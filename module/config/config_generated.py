@@ -449,6 +449,7 @@ class GeneratedConfig:
     OpsiHazard1Leveling_TargetZone = 0  # 0, 44, 22
     OpsiHazard1Leveling_SirenResearch_Enable = False
     OpsiHazard1Leveling_ExecuteFixedPatrolScan = False
+    OpsiHazard1Leveling_Cl1Filter = 'ActionPoint > PurpleCoins'
 
     # Group `OpsiCheckLeveling`
     OpsiCheckLeveling_TargetLevel = 0
