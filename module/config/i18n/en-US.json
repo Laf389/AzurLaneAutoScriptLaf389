@@ -613,7 +613,7 @@
   },
   "YukikazeTaskManager": {
     "_info": {
-      "name": "雪风大人的任务管理",
+      "name": "任务管理",
       "help": "任务相关的优先级与调度设置。"
     },
     "TaskPriorityAdjustment": {
@@ -2584,7 +2584,7 @@
     },
     "StayInZone": {
       "name": "指定海域计划作战",
-      "help": "雪风大人温馨提示:打开这个功能并指定海域后，将会在指定海域进行计划作战，不会再回到港口nanoda!侵蚀三推荐NA海域东南B，侵蚀五推荐卡利比安海B或者C nanoda!"
+      "help": "打开这个功能并指定海域后，将会在指定海域进行计划作战，不会再回到港口"
     }
   },
   "OpsiHazard1Leveling": {
@@ -2601,15 +2601,15 @@
     },
     "YellowCoinPreserve": {
       "name": "保留x点黄币",
-      "help": "雪风大人温馨提示：低于此设置的黄币数量将不会运行侵蚀一nanoda!"
-    },    
+      "help": "低于此设置的黄币数量将不会运行侵蚀一"
+    },
     "SirenResearch_Enable": {
       "name": "塞壬研究装置",
-      "help": "雪风大人提醒：消耗紫币换黄币，一个月没有几十万海里慎用nanoda!"
+      "help": "消耗紫币换黄币，一个月没有几十万海里慎用"
     },
     "ExecuteFixedPatrolScan": {
       "name": "舰队强制移动",
-      "help": "雪风大人温馨提示：开启后，将强制移动舰队以免找不到明石，指挥官你也不想因为找不到明石导致坠机nanoda？打开这个功能轻轻松松达到50万+海里每月nanoda，指挥官还在等什么nanoda!"
+      "help": "开启后，将强制移动舰队以免找不到明石"
     },
     "Cl1Filter": {
       "name": "明石购买筛选",
