@@ -301,6 +301,12 @@
     }
   },
   "General": {
+    "YukikazeTaskManager": {
+      "TaskPriorityAdjustment": {
+        "type": "textarea",
+        "value": "Restart\n> OpsiCrossMonth\n> Commission > Tactical > Research\n> Exercise\n> Dorm > Meowfficer > Guild > Gacha\n> Reward\n> ShopFrequent > ShopOnce > Shipyard > Freebies\n> PrivateQuarters\n> OpsiExplore\n> Minigame > Awaken\n> OpsiAshBeacon\n> OpsiDaily > OpsiShop > OpsiVoucher\n> OpsiAbyssal > OpsiStronghold > OpsiObscure > OpsiArchive\n> Daily > Hard > OpsiAshBeacon > OpsiAshAssist > OpsiMonthBoss\n> Sos > EventSp > EventA > EventB > EventC > EventD\n> RaidDaily > CoalitionSp > WarArchives > MaritimeEscort\n> Event > Event2 > Raid > Hospital > HospitalEvent > Coalition > Main > Main2 > Main3\n> OpsiMeowfficerFarming\n> GemsFarming\n> OpsiHazard1Leveling"
+      }
+    },
     "Retirement": {
       "RetireMode": {
         "type": "select",
@@ -9253,6 +9259,10 @@
       "TargetZone": {
         "type": "input",
         "value": 0
+      },
+      "StayInZone": {
+        "type": "checkbox",
+        "value": false  
       }
     },
     "OpsiFleet": {
@@ -9340,6 +9350,22 @@
           44,
           22
         ]
+      },
+      "YellowCoinPreserve": {
+        "type": "input",
+        "value": 100000
+      },      
+      "SirenResearch_Enable": {
+        "type": "checkbox",
+        "value": false
+      },
+      "ExecuteFixedPatrolScan": {
+        "type": "checkbox",
+        "value": false
+      },
+      "Cl1Filter": {
+        "type": "textarea",
+        "value": "ActionPoint"
       }
     },
     "OpsiFleet": {

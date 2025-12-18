@@ -42,6 +42,9 @@
     }
   },
   "General": {
+    "YukikazeTaskManager": {
+      "TaskPriorityAdjustment": "Restart\\n> OpsiCrossMonth\\n> Commission > Tactical > Research\\n> Exercise\\n> Dorm > Meowfficer > Guild > Gacha\\n> Reward\\n> ShopFrequent > ShopOnce > Shipyard > Freebies\\n> PrivateQuarters\\n> OpsiExplore\\n> Minigame > Awaken\\n> OpsiAshBeacon\\n> OpsiDaily > OpsiShop > OpsiVoucher\\n> OpsiAbyssal > OpsiStronghold > OpsiObscure > OpsiArchive\\n> Daily > Hard > OpsiAshBeacon > OpsiAshAssist > OpsiMonthBoss\\n> Sos > EventSp > EventA > EventB > EventC > EventD\\n> RaidDaily > CoalitionSp > WarArchives > MaritimeEscort\\n> Event > Event2 > Raid > Hospital > HospitalEvent > Coalition > Main > Main2 > Main3\\n> OpsiMeowfficerFarming\\n> GemsFarming\\n> OpsiHazard1Leveling"
+    },
     "Retirement": {
       "RetireMode": "one_click_retire"
     },
@@ -1904,7 +1907,8 @@
     "OpsiMeowfficerFarming": {
       "ActionPointPreserve": 1000,
       "HazardLevel": 5,
-      "TargetZone": 0
+      "TargetZone": 0,
+      "StayInZone": false
     },
     "OpsiFleet": {
       "Fleet": 1,
@@ -1929,7 +1933,11 @@
       "ServerUpdate": "00:00, 12:00"
     },
     "OpsiHazard1Leveling": {
-      "TargetZone": 0
+      "TargetZone": 0,
+      "YellowCoinPreserve": 100000,      
+      "SirenResearch_Enable": false,
+      "ExecuteFixedPatrolScan": false,
+      "Cl1Filter": "ActionPoint > PurpleCoins"
     },
     "OpsiFleet": {
       "Fleet": 1,
