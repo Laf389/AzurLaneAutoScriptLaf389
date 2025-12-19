@@ -1,0 +1,22 @@
+name: Upstream Sync
+permissions:
+  contents: write
+on:
+  schedule:
+    - cron: '0 0/6 * * *' # UTC时间每6小时同步一次
+  workflow_dispatch: # 允许手动触发
+jobs:
+  sync_latest_from_upstream:
+    name: Sync latest commits from upstream repo
+    runs-on: ubuntu-latest
+    if: ${{ github.event.repository.fork }} # 只在fork仓库运行
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v3
+      - name: Sync upstream changes
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+        with:
+          upstream_sync_repo: https://github.com/LmeSzinc/AzurLaneAutoScript/ # 🛠️修改为上游仓库
+          upstream_sync_branch: master # 🛠️上游分支名，如：main, master
+          target_sync_branch: master # 🛠️你要同步的本地分支名
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
