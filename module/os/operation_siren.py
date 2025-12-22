@@ -490,7 +490,7 @@ class OperationSiren(OSMap):
             if self.config.OpsiGeneral_BuyActionPointLimit > 0:
                 keep_current_ap = False
             self.action_point_set(cost=70, keep_current_ap=keep_current_ap, check_rest_ap=True)
-            if self._action_point_total >= self.config.OpsiHazard1Leveling_ActionPointPreserve and self.config.OpsiHazard1Leveling_SurplusActionPointMeowfficerFarming:
+            if self._action_point_total >= self.config.OpsiHazard1Leveling_ActionPointPreserve and self.config.OpsiHazard1Leveling_SurplusActionPointMeowfficerFarming and self.config.OpsiHazard1Leveling_ConnectedToMeowfficerFarming:
                 with self.config.multi_set():
                     self.config.task_delay(server_update=True)
                     if not self.is_in_opsi_explore():
