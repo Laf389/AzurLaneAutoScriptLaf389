@@ -456,7 +456,7 @@ class OperationSiren(OSMap):
         self.config.override(
             OpsiGeneral_DoRandomMapEvent=True,
         )
-        if not self.config.is_task_enabled('OpsiMeowfficerFarming'):
+        if self.config.OpsiHazard1Leveling_ConnectedToMeowfficerFarming and not self.config.is_task_enabled('OpsiMeowfficerFarming'):
             self.config.cross_set(keys='OpsiMeowfficerFarming.Scheduler.Enable', value=True)
         while True:
             # Limited action point preserve of hazard 1 to 200
@@ -470,15 +470,16 @@ class OperationSiren(OSMap):
 
             if self.get_yellow_coins() < self.config.OpsiHazard1Leveling_YellowCoinPreserve:
                 logger.info(f'Reach the limit of yellow coins, preserve={self.config.OpsiHazard1Leveling_YellowCoinPreserve}')
-                with self.config.multi_set():
-                    self.config.task_delay(server_update=True)
-                    if not self.is_in_opsi_explore():
-                        cd = self.nearest_task_cooling_down
-                        if cd is None:
-                            for task in ['OpsiAbyssal', 'OpsiStronghold', 'OpsiObscure']:
-                                if self.config.is_task_enabled(task):
-                                    self.config.task_call(task)
-                        self.config.task_call('OpsiMeowfficerFarming')
+                if self.config.OpsiHazard1Leveling_ConnectedToMeowfficerFarming:
+                    with self.config.multi_set():
+                        self.config.task_delay(server_update=True)
+                        if not self.is_in_opsi_explore():
+                            cd = self.nearest_task_cooling_down
+                            if cd is None:
+                              for task in ['OpsiAbyssal', 'OpsiStronghold', 'OpsiObscure']:
+                                  if self.config.is_task_enabled(task):
+                                     self.config.task_call(task)
+                            self.config.task_call('OpsiMeowfficerFarming')
                 self.config.task_stop()
 
             self.get_current_zone()
@@ -489,7 +490,7 @@ class OperationSiren(OSMap):
             if self.config.OpsiGeneral_BuyActionPointLimit > 0:
                 keep_current_ap = False
             self.action_point_set(cost=70, keep_current_ap=keep_current_ap, check_rest_ap=True)
-            if self._action_point_total >= 3000:
+            if self._action_point_total >= self.config.OpsiHazard1Leveling_ActionPointPreserve and self.config.OpsiHazard1Leveling_SurplusActionPointMeowfficerFarming:
                 with self.config.multi_set():
                     self.config.task_delay(server_update=True)
                     if not self.is_in_opsi_explore():

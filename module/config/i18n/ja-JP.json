@@ -2612,6 +2612,18 @@
       "name": "舰队强制移动",
       "help": "开启后，将强制移动舰队以免找不到明石"
     },
+    "ConnectedToMeowfficerFarming": {
+      "name": "OpsiHazard1Leveling.ConnectedToMeowfficerFarming.name",
+      "help": "OpsiHazard1Leveling.ConnectedToMeowfficerFarming.help"
+    },
+    "SurplusActionPointMeowfficerFarming": {
+      "name": "OpsiHazard1Leveling.SurplusActionPointMeowfficerFarming.name",
+      "help": "OpsiHazard1Leveling.SurplusActionPointMeowfficerFarming.help"
+    },
+    "ActionPointPreserve": {
+      "name": "OpsiHazard1Leveling.ActionPointPreserve.name",
+      "help": "OpsiHazard1Leveling.ActionPointPreserve.help"
+    },
     "Cl1Filter": {
       "name": "明石购买筛选",
       "help": "侵蚀一明石一般只购买体力nanoda"

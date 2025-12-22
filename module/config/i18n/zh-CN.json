@@ -2612,9 +2612,21 @@
       "name": "舰队强制移动",
       "help": "开启后，将强制移动舰队以免找不到明石"
     },
+    "ConnectedToMeowfficerFarming": {
+      "name": "与短猫关联",
+      "help": "请启用大世界开荒任务或使用战役信息记录仪（5000油道具）；开启后alas将强制开启短猫，并在黄币小于设定值时清理隐秘、深渊、要塞与进行短猫；如果你认为你对大世界的收益还有追求，请打开这个选项。"
+    },
+    "SurplusActionPointMeowfficerFarming": {
+      "name": "高行动力自动短猫",
+      "help": "开启上一选项时才可生效；开启后alas将在行动力大于设定值时清理隐秘、深渊、要塞与进行短猫；比较推荐开启"
+    },
+    "ActionPointPreserve": {
+      "name": "保留 X 点行动力",
+      "help": "开启上一选项时才可生效；低于此行动力将不会主动强制短猫，但若行动力高于在短猫设置的行动力保留值仍然会在短猫任务到时间触发时进行短猫"
+    },
     "Cl1Filter": {
       "name": "明石购买筛选",
-      "help": "侵蚀一明石一般只购买体力nanoda,ActionPoint > PurpleCoins为购买紫币nanoda"
+      "help": "侵蚀一明石一般只购买体力,ActionPoint > PurpleCoins为购买紫币"
     }
   },
   "OpsiCheckLeveling": {

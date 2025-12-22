@@ -789,6 +789,9 @@ OpsiHazard1Leveling:
   YellowCoinPreserve: 100000    
   SirenResearch_Enable: false
   ExecuteFixedPatrolScan: false
+  ConnectedToMeowfficerFarming: true
+  SurplusActionPointMeowfficerFarming: true
+  ActionPointPreserve: 3000
   Cl1Filter: |-
     ActionPoint > PurpleCoins
 OpsiCheckLeveling:

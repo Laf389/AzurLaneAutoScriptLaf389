@@ -57,7 +57,7 @@ class GeneratedConfig:
     # Group `Retirement`
     Retirement_RetireMode = 'one_click_retire'  # one_click_retire, enhance, old_retire
 
-    # Group `TaskManager`
+    # Group `YukikazeTaskManager`
     YukikazeTaskManager_TaskPriorityAdjustment = 'Restart\n> OpsiCrossMonth\n> Commission > Tactical > Research\n> Exercise\n> Dorm > Meowfficer > Guild > Gacha\n> Reward\n> ShopFrequent > ShopOnce > Shipyard > Freebies\n> PrivateQuarters\n> OpsiExplore\n> Minigame > Awaken\n> OpsiAshBeacon\n> OpsiDaily > OpsiShop > OpsiVoucher\n> OpsiAbyssal > OpsiStronghold > OpsiObscure > OpsiArchive\n> Daily > Hard > OpsiAshBeacon > OpsiAshAssist > OpsiMonthBoss\n> Sos > EventSp > EventA > EventB > EventC > EventD\n> RaidDaily > CoalitionSp > WarArchives > MaritimeEscort\n> Event > Event2 > Raid > Hospital > HospitalEvent > Coalition > Main > Main2 > Main3\n> OpsiMeowfficerFarming\n> GemsFarming\n> OpsiHazard1Leveling'
 
     # Group `OneClickRetire`
@@ -447,9 +447,12 @@ class GeneratedConfig:
 
     # Group `OpsiHazard1Leveling`
     OpsiHazard1Leveling_TargetZone = 0  # 0, 44, 22
-    OpsiHazard1Leveling_YellowCoinPreserve = 100000    
+    OpsiHazard1Leveling_YellowCoinPreserve = 100000
     OpsiHazard1Leveling_SirenResearch_Enable = False
     OpsiHazard1Leveling_ExecuteFixedPatrolScan = False
+    OpsiHazard1Leveling_ConnectedToMeowfficerFarming = True
+    OpsiHazard1Leveling_SurplusActionPointMeowfficerFarming = True
+    OpsiHazard1Leveling_ActionPointPreserve = 3000
     OpsiHazard1Leveling_Cl1Filter = 'ActionPoint > PurpleCoins'
 
     # Group `OpsiCheckLeveling`

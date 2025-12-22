@@ -2416,6 +2416,10 @@
     "EnsureFullyCollected": {
       "name": "保證收集滿每日200信標數據",
       "help": "在收集滿為前，暫時無視保留行動力設定，需要同時開啟 \"短貓相接\""
+    },
+    "AutoCollectShip": {
+      "name": "OpsiAshBeacon.AutoCollectShip.name",
+      "help": "OpsiAshBeacon.AutoCollectShip.help"
     }
   },
   "OpsiFleetFilter": {
@@ -2607,6 +2611,18 @@
     "ExecuteFixedPatrolScan": {
       "name": "舰队强制移动",
       "help": "开启后，将强制移动舰队以免找不到明石"
+    },
+    "ConnectedToMeowfficerFarming": {
+      "name": "OpsiHazard1Leveling.ConnectedToMeowfficerFarming.name",
+      "help": "OpsiHazard1Leveling.ConnectedToMeowfficerFarming.help"
+    },
+    "SurplusActionPointMeowfficerFarming": {
+      "name": "OpsiHazard1Leveling.SurplusActionPointMeowfficerFarming.name",
+      "help": "OpsiHazard1Leveling.SurplusActionPointMeowfficerFarming.help"
+    },
+    "ActionPointPreserve": {
+      "name": "OpsiHazard1Leveling.ActionPointPreserve.name",
+      "help": "OpsiHazard1Leveling.ActionPointPreserve.help"
     },
     "Cl1Filter": {
       "name": "明石购买筛选",

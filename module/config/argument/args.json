@@ -301,12 +301,6 @@
     }
   },
   "General": {
-    "YukikazeTaskManager": {
-      "TaskPriorityAdjustment": {
-        "type": "textarea",
-        "value": "Restart\n> OpsiCrossMonth\n> Commission > Tactical > Research\n> Exercise\n> Dorm > Meowfficer > Guild > Gacha\n> Reward\n> ShopFrequent > ShopOnce > Shipyard > Freebies\n> PrivateQuarters\n> OpsiExplore\n> Minigame > Awaken\n> OpsiAshBeacon\n> OpsiDaily > OpsiShop > OpsiVoucher\n> OpsiAbyssal > OpsiStronghold > OpsiObscure > OpsiArchive\n> Daily > Hard > OpsiAshBeacon > OpsiAshAssist > OpsiMonthBoss\n> Sos > EventSp > EventA > EventB > EventC > EventD\n> RaidDaily > CoalitionSp > WarArchives > MaritimeEscort\n> Event > Event2 > Raid > Hospital > HospitalEvent > Coalition > Main > Main2 > Main3\n> OpsiMeowfficerFarming\n> GemsFarming\n> OpsiHazard1Leveling"
-      }
-    },
     "Retirement": {
       "RetireMode": {
         "type": "select",
@@ -370,6 +364,12 @@
           "retire_all",
           "retire_10"
         ]
+      }
+    },
+    "YukikazeTaskManager": {
+      "TaskPriorityAdjustment": {
+        "type": "textarea",
+        "value": "Restart\n> OpsiCrossMonth\n> Commission > Tactical > Research\n> Exercise\n> Dorm > Meowfficer > Guild > Gacha\n> Reward\n> ShopFrequent > ShopOnce > Shipyard > Freebies\n> PrivateQuarters\n> OpsiExplore\n> Minigame > Awaken\n> OpsiAshBeacon\n> OpsiDaily > OpsiShop > OpsiVoucher\n> OpsiAbyssal > OpsiStronghold > OpsiObscure > OpsiArchive\n> Daily > Hard > OpsiAshBeacon > OpsiAshAssist > OpsiMonthBoss\n> Sos > EventSp > EventA > EventB > EventC > EventD\n> RaidDaily > CoalitionSp > WarArchives > MaritimeEscort\n> Event > Event2 > Raid > Hospital > HospitalEvent > Coalition > Main > Main2 > Main3\n> OpsiMeowfficerFarming\n> GemsFarming\n> OpsiHazard1Leveling"
       }
     },
     "Storage": {
@@ -9262,7 +9262,7 @@
       },
       "StayInZone": {
         "type": "checkbox",
-        "value": false  
+        "value": false
       }
     },
     "OpsiFleet": {
@@ -9354,7 +9354,7 @@
       "YellowCoinPreserve": {
         "type": "input",
         "value": 100000
-      },      
+      },
       "SirenResearch_Enable": {
         "type": "checkbox",
         "value": false
@@ -9363,9 +9363,21 @@
         "type": "checkbox",
         "value": false
       },
+      "ConnectedToMeowfficerFarming": {
+        "type": "checkbox",
+        "value": true
+      },
+      "SurplusActionPointMeowfficerFarming": {
+        "type": "checkbox",
+        "value": true
+      },
+      "ActionPointPreserve": {
+        "type": "input",
+        "value": 3000
+      },
       "Cl1Filter": {
         "type": "textarea",
-        "value": "ActionPoint"
+        "value": "ActionPoint > PurpleCoins"
       }
     },
     "OpsiFleet": {
