@@ -61,15 +61,24 @@ class State:
     theme: str = "default"
     last_screenshot_base64: str = None
     placeholder_images: list = [
-        "screen1.png",
+        "screen1.jpg",
         "screen2.jpg",
         "screen3.jpg",
         "screen4.jpg",
-        "screen5.png",
-        "screen6.png",
-        "screen7.png",
+        "screen5.jpg",
+        "screen6.jpg",
+        "screen7.jpg",
         "screen8.jpg",
-        "screen9.png",
+        "screen9.jpg",
+        "screen10.jpg",
+        "screen11.jpg",
+        "screen12.jpg",
+        "screen13.jpg",
+        "screen14.jpg",
+        "screen15.jpg",
+        "screen16.jpg",
+        "screen17.jpg",
+        "screen18.jpg",
     ]
     placeholder_index: int = 0
 

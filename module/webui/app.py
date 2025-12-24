@@ -713,7 +713,7 @@ class AlasGUI(Frame):
         self.task_handler.add(self.update_screenshot_display, 0.5, True)
 
         with use_scope("screenshot_btn", clear=True):
-            label = "看见了nanoda" if getattr(State, "display_screenshots", False) else "看不见nanoda"
+            label = "看见了" if getattr(State, "display_screenshots", False) else "看不见"
 
             def _toggle_screenshot(_=None):
                 State.display_screenshots = not getattr(State, "display_screenshots", False)
@@ -743,8 +743,8 @@ class AlasGUI(Frame):
                 with use_scope("screenshot_btn", clear=True):
                     put_buttons(
                         [
-                            {"label": "看见了nanoda" if State.display_screenshots else "看不见nanoda", "value": "toggle", "color": "off"},
-                            {"label": "切换雪风大人图片", "value": "switch", "color": "off"},
+                            {"label": "关闭监控" if State.display_screenshots else "开启监控", "value": "toggle", "color": "off"},
+                            {"label": "切换拉菲美图", "value": "switch", "color": "off"},
                         ],
                         onclick=[_toggle_screenshot, _switch_placeholder],
                     ).style("text-align: center")
@@ -753,7 +753,7 @@ class AlasGUI(Frame):
                 try:
                     url = State.toggle_placeholder()
                     run_js(f'var img=document.getElementById("screenshot-img"); if(img) {{ img.src="{url}"; img.setAttribute("data-modal-src", "{url}"); }}')
-                    toast(t("雪风大人的图片已切换") if hasattr(t, '__call__') else "雪风大人的图片已切换", duration=1)
+                    toast(t("拉菲美图已切换") if hasattr(t, '__call__') else "拉菲美图已切换", duration=1)
                 except Exception:
                     pass
 
@@ -763,7 +763,7 @@ class AlasGUI(Frame):
             put_buttons(
                 [
                     {"label": label, "value": "toggle", "color": "off"},
-                    {"label": "切换雪风大人图片", "value": "switch", "color": "off"},
+                    {"label": "切换拉菲美图", "value": "switch", "color": "off"},
                 ],
                 onclick=[_toggle_screenshot, _switch_placeholder],
             ).style("text-align: center")
