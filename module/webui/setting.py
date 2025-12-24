@@ -59,7 +59,25 @@ class State:
     manager: SyncManager = None
     electron: bool = False
     theme: str = "default"
+    last_screenshot_base64: str = None
+    placeholder_images: list = [
+        "laffey1.jpg",
+        "laffey2.jpg",
+        "laffey3.jpg",
+        "laffey4.jpg",
+    ]
+    placeholder_index: int = 0
 
+    @classmethod
+    def get_placeholder_url(cls) -> str:
+        name = cls.placeholder_images[cls.placeholder_index % len(cls.placeholder_images)]
+        return f"/static/assets/spa/{name}"
+
+    @classmethod
+    def toggle_placeholder(cls) -> str:
+        cls.placeholder_index = (cls.placeholder_index + 1) % len(cls.placeholder_images)
+        return cls.get_placeholder_url()
+    
     @classmethod
     def init(cls):
         cls.manager = multiprocessing.Manager()
